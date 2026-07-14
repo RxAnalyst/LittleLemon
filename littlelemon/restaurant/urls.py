@@ -12,10 +12,10 @@ router.register(r'users', views.UserViewSet)
 urlpatterns = [
     
     path('', views.index, name='index'),
-    path('', include(router.urls)),
+    path('restaurant/booking/', include(router.urls)),
     path('api-auth/', include('rest_framework.urls', namespace='rest_framework')),
     path('restaurant/menu/', views.MenuView.as_view()),
-    path('menu/<int:pk>/', views.SingleMenuView.as_view()),
+    path('restaurant/menu/<int:pk>/', views.SingleMenuView.as_view()),
     path('message/', views.msg),
     path('api-token-auth/', obtain_auth_token),
 ]

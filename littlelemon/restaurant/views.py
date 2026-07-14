@@ -31,8 +31,7 @@ class MenuView(generics.ListCreateAPIView):
 
 
 class SingleMenuView(
-    generics.RetrieveUpdateAPIView,
-    generics.DestroyAPIView
+    generics.RetrieveUpdateDestroyAPIView
 ):
     permission_classes = [IsAuthenticated]
     queryset = Menu.objects.all()
